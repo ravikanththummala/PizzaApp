@@ -10,6 +10,8 @@ import SwiftUI
 struct StatusBarView: View {
     
     @Binding var showOrders:Bool
+    @Binding var presendGrid:Bool
+
     @EnvironmentObject var orders:OrderModel
 
     var body: some View {
@@ -23,6 +25,16 @@ struct StatusBarView: View {
                     .font(.title2)
             }
             
+            
+            if !showOrders {
+                Button{
+                    presendGrid.toggle()
+                } label: {
+                    Image(systemName: presendGrid ? "square.grid.3x2" : "list.bullet")
+                        .font(.title2)
+                }
+            }
+
             Spacer()
             
             Label(title: { Text(orders.orderTotal,format: .currency(code: "USD")) },
@@ -35,6 +47,6 @@ struct StatusBarView: View {
 }
 
 #Preview {
-    StatusBarView(showOrders: .constant(false))
+    StatusBarView(showOrders: .constant(false), presendGrid: .constant(false))
         .environmentObject(OrderModel())
 }
