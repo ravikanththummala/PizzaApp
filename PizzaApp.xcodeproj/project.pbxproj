@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D2FF9B32B883EE500C3FA1F /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FF9B22B883EE500C3FA1F /* StatusBarView.swift */; };
 		3D573FF62B8ACB1900F05CEF /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D573FF52B8ACB1900F05CEF /* OrderDetailView.swift */; };
+		3D573FF82B8AE09700F05CEF /* MenuView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D573FF72B8AE09700F05CEF /* MenuView2.swift */; };
+		3D573FFA2B8AE0E700F05CEF /* MenuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D573FF92B8AE0E700F05CEF /* MenuDetailView.swift */; };
 		3DEC216A2B8927C200422DF9 /* OrderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC21692B8927C200422DF9 /* OrderItemView.swift */; };
 		3DEC216C2B893C5100422DF9 /* MenuItemTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC216B2B893C5100422DF9 /* MenuItemTileView.swift */; };
 		3DEC216E2B893D3E00422DF9 /* MenuGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC216D2B893D3E00422DF9 /* MenuGridView.swift */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		3D2FF9B22B883EE500C3FA1F /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
 		3D573FF52B8ACB1900F05CEF /* OrderDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
+		3D573FF72B8AE09700F05CEF /* MenuView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView2.swift; sourceTree = "<group>"; };
+		3D573FF92B8AE0E700F05CEF /* MenuDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailView.swift; sourceTree = "<group>"; };
 		3DEC21692B8927C200422DF9 /* OrderItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemView.swift; sourceTree = "<group>"; };
 		3DEC216B2B893C5100422DF9 /* MenuItemTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTileView.swift; sourceTree = "<group>"; };
 		3DEC216D2B893D3E00422DF9 /* MenuGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuGridView.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 				3DEC216F2B893F7100422DF9 /* FavoriteTileView.swift */,
 				3DF483642B85B4700009A2E6 /* HeaderView.swift */,
 				3DEC216D2B893D3E00422DF9 /* MenuGridView.swift */,
+				3D573FF92B8AE0E700F05CEF /* MenuDetailView.swift */,
 				3DEC216B2B893C5100422DF9 /* MenuItemTileView.swift */,
 				3DF4835E2B85B41F0009A2E6 /* MenuItemView.swift */,
 				3DF483602B85B42C0009A2E6 /* MenuRowView.swift */,
@@ -101,6 +106,7 @@
 				3DF483662B862D600009A2E6 /* RatingView.swift */,
 				3D2FF9B22B883EE500C3FA1F /* StatusBarView.swift */,
 				3DF483502B85A97E0009A2E6 /* Assets.xcassets */,
+				3D573FF72B8AE09700F05CEF /* MenuView2.swift */,
 				3DF4836A2B8675820009A2E6 /* Models */,
 				3DF483522B85A97E0009A2E6 /* Preview Content */,
 			);
@@ -199,6 +205,7 @@
 				3DF4835B2B85B3EA0009A2E6 /* OrderView.swift in Sources */,
 				3DF4835D2B85B4000009A2E6 /* MenuView.swift in Sources */,
 				3DEC21702B893F7100422DF9 /* FavoriteTileView.swift in Sources */,
+				3D573FFA2B8AE0E700F05CEF /* MenuDetailView.swift in Sources */,
 				3DF4836F2B86759E0009A2E6 /* MenuModel.swift in Sources */,
 				3DF483612B85B42C0009A2E6 /* MenuRowView.swift in Sources */,
 				3DF483712B86759E0009A2E6 /* OrderModel.swift in Sources */,
@@ -208,6 +215,7 @@
 				3DF483702B86759E0009A2E6 /* OrderItem.swift in Sources */,
 				3DF4834F2B85A9780009A2E6 /* ContentView.swift in Sources */,
 				3DF4834D2B85A9780009A2E6 /* PizzaAppApp.swift in Sources */,
+				3D573FF82B8AE09700F05CEF /* MenuView2.swift in Sources */,
 				3D2FF9B32B883EE500C3FA1F /* StatusBarView.swift in Sources */,
 				3DEC216E2B893D3E00422DF9 /* MenuGridView.swift in Sources */,
 				3DF483632B85B4550009A2E6 /* OrderRowView.swift in Sources */,

@@ -11,11 +11,14 @@ struct OrderDetailView: View {
     @Binding var orderItem:OrderItem
     @Binding var presentSheet:Bool
     @Binding var newOrder:Bool
+    
     @State private var quantity:Int
     @State private var doubleIngredient:Bool
     @State private var pizzaCrust:PizzaCrust
     @State private var name:String
     @State private var comments:String
+    @State private var presentAlert:Bool = false
+
     @EnvironmentObject var orders:OrderModel
     
     init(orderItem:Binding<OrderItem>,presentSheet:Binding<Bool>,newOrder:Binding<Bool>){
@@ -100,7 +103,7 @@ struct OrderDetailView: View {
                     .shadow(radius: 1)
             Spacer()
             HStack {
-                Button("Order"){
+                Button("Update"){
                         updateOrder()
                         if newOrder{
                             orders.addOrder(orderItem: orderItem)
@@ -108,6 +111,7 @@ struct OrderDetailView: View {
                             orders.replaceOrder(id: orderItem.id, with: orderItem)
                         }
                         presentSheet = false
+                        presentAlert = true
                     }
                     .padding()
                     .padding([.leading,.trailing])
@@ -116,20 +120,23 @@ struct OrderDetailView: View {
                     .font(.title)
                     .padding(.trailing,20)
                     .shadow(radius:7,x:2,y:2)
-                Button("Cancel"){
-                    presentSheet = false
-                }
-                .padding()
-                .padding([.leading,.trailing])
-                .foregroundColor(.white)
-                .background(.red,in: Capsule())
-                .font(.title)
-                .shadow(radius:7,x:2,y:2)
+                    .alert("Hulio Pizza Copany \n \(orderItem.name) Updated ",isPresented: $presentAlert){
+                        
+                    }
+//                Button("Cancel"){
+//                    presentSheet = false
+//                }
+//                .padding()
+//                .padding([.leading,.trailing])
+//                .foregroundColor(.white)
+//                .background(.red,in: Capsule())
+//                .font(.title)
+//                .shadow(radius:7,x:2,y:2)
             }
         }
         .padding()
         .navigationTitle("Your Order")
-        .background(Color("Surf"))
+        .background(Color("Surf"),in:Rectangle())
         
     }
     

@@ -16,7 +16,12 @@ struct OrderRowView: View {
         VStack {
             HStack {
                 Text(order.item.name)
+                Text("-" + order.preferredCrust.rawValue)
+                if order.extraIngredients {
+                    Image(systemName: "2.circle")
+                }
                 Spacer()
+                Text(order.name)
             }
 
             HStack(alignment:.firstTextBaseline){
