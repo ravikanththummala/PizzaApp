@@ -10,7 +10,7 @@ import SwiftUI
 struct MenuGridView: View {
     @State private var favorites:[Int]  = [-1]
     @Binding var selectedItem:MenuItem
-
+    
     func menu(id:Int) ->MenuItem {
         menu.first(where: {$0.id == id}) ?? noMenuItem
     }

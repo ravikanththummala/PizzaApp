@@ -11,6 +11,9 @@ struct MenuItemView: View {
     @State private var addedItem:Bool = false
     @Binding var selectededItem: MenuItem
     @ObservedObject var orders:OrderModel
+    @State var presentAlert:Bool = false
+    @State private var newOrder:Bool = true
+    @State private var order = noOrderItem
     
     var body: some View {
         VStack {
@@ -22,7 +25,6 @@ struct MenuItemView: View {
                     .foregroundStyle(.ultraThickMaterial)
                     .padding(.leading)
                     .frame(minWidth: 150,maxWidth: 1000, maxHeight:150)
-                
                 
                 if let image = UIImage(named: "\(selectededItem.id)_lg") {
                     Image(uiImage: image)
@@ -37,26 +39,21 @@ struct MenuItemView: View {
                         .scaledToFit()
                         .rotationEffect(.degrees(180))
                 }
-                
             }
             .background(.linearGradient(colors: [Color("Surf"),Color("Sky")], startPoint: .leading, endPoint: .bottomTrailing), in: Capsule())
             .shadow(color:.cyan.opacity(0.5),radius: 5, x: 8,y: 8)
             
-            
             VStack(alignment:.leading) {
-                
                 ScrollView {
                     Text(selectededItem.description)
                         .font(.custom("Georgia", size: 18,relativeTo: .body))
                 }
-                
             }
             Button {
-                addedItem = true
-                orders.addOrder(selectededItem, quantity: 1)
+                presentAlert = true
+                
             } label: {
                 Spacer()
-                
                 Text(selectededItem.price,format: .currency(code: "USD")).bold()
                 Image(systemName: addedItem ?  "cart.fill.badge.plus" : "cart.badge.plus")
                 Spacer()
@@ -66,7 +63,22 @@ struct MenuItemView: View {
             .background(.red, in: Capsule())
             .foregroundStyle(.white)
             .padding(5)
-            
+            //            .alert("Buy a \(selectededItem.name)", isPresented: $presentAlert) {
+            //                Button("No",role: .cancel){ }
+            //                Button("Yes") {
+            //                    addedItem = true
+            //                    orders.addOrder(selectededItem, quantity: 1)
+            //                }
+            //                Button("Make it a double") {
+            //                    addedItem = true
+            //                    orders.addOrder(selectededItem, quantity: 1)
+            //                }
+            //            }
+            .sheet(isPresented: $presentAlert){
+                addedItem = true
+            } content:{
+                OrderDetailView(orderItem: $order, presentSheet: $presentAlert, newOrder: $newOrder)
+            }
         }
     }
 }
